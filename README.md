@@ -20,66 +20,70 @@ This repository includes two files that can be used to set up and install uWebSo
 
 Once the install for uWebSocketIO is complete, the main program can be built and ran by doing the following from the project top directory.
 
-1. mkdir build
-2. cd build
-3. cmake ..
-4. make
-5. ./particle_filter
+1. `mkdir build`
+2. `cd build`
+3. `cmake ..`
+4. `make`
+5. `./particle_filter`
 
 Alternatively some scripts have been included to streamline this process, these can be leveraged by executing the following in the top directory of the project:
 
-1. ./clean.sh
-2. ./build.sh
-3. ./run.sh
+1. `./clean.sh`
+2. `./build.sh`
+3. `./run.sh`
 
 Tips for setting up your environment can be found [here](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/23d376c7-0195-4276-bdf0-e02f1f3c665d)
-INPUT: values provided by the simulator to the c++ program
 
-// sense noisy position data from the simulator
-
-["sense_x"]
-
-["sense_y"]
-
-["sense_theta"]
-
-// get the previous velocity and yaw rate to predict the particle's transitioned state
-
-["previous_velocity"]
-
-["previous_yawrate"]
-
-// receive noisy observation data from the simulator, in a respective list of x/y values
-
-["sense_observations_x"]
-
-["sense_observations_y"]
-
-
-OUTPUT: values provided by the c++ program to the simulator
-
-// best particle values used for calculating the error evaluation
-
-["best_particle_x"]
-
-["best_particle_y"]
-
-["best_particle_theta"]
-
-//Optional message data used for debugging particle's sensing and associations
-
-// for respective (x,y) sensed positions ID label
-
-["best_particle_associations"]
-
-// for respective (x,y) sensed positions
-
-["best_particle_sense_x"] <= list of sensed x positions
-
-["best_particle_sense_y"] <= list of sensed y positions
+***INPUT***: values provided by the simulator to the c++ program
+<ul>
+  <li>sense noisy position data from the simulator
+    <ul>
+      <li>["sense_x"]</li>
+      <li>["sense_y"]</li>
+      <li>["sense_theta"]</li>
+    </ul>
+  </li>
+  <li>get the previous velocity and yaw rate to predict the particle's transitioned state
+    <ul>
+      <li>["previous_velocity"]</li>
+      <li>["previous_yawrate"]</li>
+    </ul>
+  </li>
+  <li>receive noisy observation data from the simulator, in a respective list of x/y values
+    <ul>
+      <li>["sense_observations_x"]</li>
+      <li>["sense_observations_y"]</li>
+    </ul>
+  </li>
+</ul>
 
 
-#### The Map*
+***OUTPUT***: values provided by the c++ program to the simulator
+<ul>
+  <li>best particle values used for calculating the error evaluation
+    <ul>
+      <li>["best_particle_x"]</li>
+      <li>["best_particle_y"]</li>
+      <li>["best_particle_theta"]</li>
+    </ul>
+  </li>
+  <li>Optional message data used for debugging particle's sensing and associations
+      <ul>
+      <li>for respective (x,y) sensed positions ID label</li>
+      <ul>
+        <li>["best_particle_associations"]</li>
+      </ul>
+      <li>for respective (x,y) sensed positions
+        <ul>
+          <li>["best_particle_sense_x"] <= list of sensed x positions</li>
+          <li>["best_particle_sense_y"] <= list of sensed y positions</li>
+          </ul>
+        </li>
+    </ul>
+  </li>
+</ul>
+
+#### The Map
 `map_data.txt` includes the position of landmarks (in meters) on an arbitrary Cartesian coordinate system. Each row has three columns
 1. x position
 2. y position
@@ -92,7 +96,6 @@ OUTPUT: values provided by the c++ program to the simulator
 ## Success Criteria
 
 The things the project is looking for are:
-
 
 1. **Accuracy**: the particle filter should localize vehicle position and yaw to within the values specified in the parameters `max_translation_error` and `max_yaw_error` in `src/main.cpp`.
 
